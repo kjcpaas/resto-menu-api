@@ -6,8 +6,12 @@
 
 - Read the specifications
 - Install latest Ruby version (3.3.1)
-    - brew upgrade ruby-build
-    - rbenv install 3.3.1
+
+```
+brew upgrade ruby-build
+rbenv install 3.3.1
+```
+
 - Create task list (see Todo)
 - Identify gaps in knowledge
 
@@ -66,8 +70,6 @@ Based on the provided ERD, the models were generated in the following order to e
 - Modifier
 - Item Modifier Group
 
-**NOTE**: Based on email with Sunny, I implemented Modifier such that it only references `ModifierGroup` because of contradictions of the circular reference.
-
 This allows Modifier Group to be reused by other items as well (e.g. Drink Sizes can be used by any drink in the menu)
 
 #### Primary keys
@@ -77,6 +79,8 @@ I set `id: false` in model migrations to follow the specifications according to 
 This means, using a string `identifier` as primary key for most models, instead of integer `id` that Rails provides.
 
 For other models that reference other models, I defined composite primary keys.
+
+Due to these non-standard requirements, extra care must be done to ensure that foreign key references work with RoR's auto-references.
 
 #### Validations
 
@@ -88,10 +92,38 @@ Ensuring data integrity is a combination of model validations and DB validations
 
 Defaults and presence requirements can be checked by DB but we will also implement the same validations and more in the model layer.
 
-- Generate seed data
-- Deploy api (will use Heroku for simplicity)
-- Setup CI/CD pipeline
-    - rubocop (use Airbnb styles)
-- Design GraphQL mutations for reading data
-    - 1st mutation will be simple, and will write test after (to get the hang of RoR + GraphQL)
-    - TDD will be used for the next mutations (Tests serve as design specification)
+## Generate seed data
+
+With the help of ChatGPT, I generated data for a Seasonal Menu of a fictional Japanese restaurant.
+
+```
+-------------------------------------------
+          Sakura Blossom Delights
+-------------------------------------------
+Embark on a culinary journey through the delicate flavors of the season with our Sakura Blossom Delights menu, featuring Chef Hiroshi's exquisite creations.
+
+-------------------------------------------
+            Chef's Table
+-------------------------------------------
+Sakura Omakase:
+- Indulge in an exclusive dining experience at our Chef's Table, curated by Chef Hiroshi, where you entrust the chef to craft a bespoke tasting menu highlighting the essence of cherry blossoms with each dish. ($150 per person)
+
+-------------------------------------------
+                Drinks
+-------------------------------------------
+Elevate your dining experience with carefully curated beverages:
+
+Sakura Blossom Tea (Sakura-cha):
+- Oyu (Hot): Indulge in the comforting warmth of fragrant green tea infused with delicate cherry blossoms, offering a soothing accompaniment to your meal. ($8)
+- Hiya (Cold): Refresh your palate with the crisp and invigorating flavors of chilled green tea infused with delicate cherry blossoms, perfect for enjoying on a warm day. ($8)
+
+Sakura Sake (Sakura Nihonshu):
+- Tokkuri (Small Flask): A single-serving flask of premium sake infused with the essence of cherry blossoms, perfect for savoring the flavors of the season. ($12)
+- Chokkari (Medium Flask): A medium-sized flask of premium sake, ideal for sharing and enhancing the culinary journey with friends or loved ones. ($18)
+- Otokka (Large Flask): A generous flask of premium sake, symbolizing celebration and joy, to elevate your dining experience to new heights. ($25)
+
+Please indicate your preferred options for the Sakura-cha and Sakura Nihonshu upon reservation.
+-------------------------------------------
+
+Enjoy your Sakura Blossom Delights experience!
+```

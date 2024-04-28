@@ -22,4 +22,4 @@ test:
 
 production:
   adapter: postgres
-  url: <%= ENV.fetch("DATABASE_URL") %>
+  url: <%= ENV.fetch("DATABASE_URL") if Rails.env.production? %>

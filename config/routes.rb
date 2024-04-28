@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   post '/graphql', to: 'graphql#execute'
 
-  root to: proc { [200, {}, ['Access the GraphQL api via /graphql']] }
+  root to: proc { [200, {}, ['GraphQL API via POST /graphql, GraphiQL interface via GET /graphiql']] }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

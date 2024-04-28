@@ -2,11 +2,11 @@
 
 This app is a GraphQL API for Restaurant Menu.
 
-Worklogs is in [docs/worklog.md]
+I logged my work notes [here](docs/worklog.md)
 
 Access the GraphiQL interface via: https://resto-menu-api-3c61fad65343.herokuapp.com/graphiql
 
-You can check [spec/fixtures/graphql] for some sample queries
+You can check [GraphQL Fixtures](spec/fixtures/graphql) for some sample queries
 
 
 ## Pre-requisites

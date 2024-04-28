@@ -1,0 +1,13 @@
+mutation {
+  createMenu(
+  label: "<%= label %>"<%= ",\nstartDate: \"#{start_date}\"" if start_date.present? %><%= ",\nendDate: \"#{end_date}\"" if end_date.present? %><%= ",\nstate: \"#{state}\"" if state.present? %>
+  ) {
+    menu {
+      label
+      identifier
+      state
+      startDate
+      endDate
+    }
+  }
+}

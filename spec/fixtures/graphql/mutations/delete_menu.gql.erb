@@ -1,0 +1,13 @@
+mutation {
+  deleteMenu(
+    identifier: "<%= identifier %>"
+  ) {
+    menu {
+      label
+      identifier
+      state
+      startDate
+      endDate
+    }
+  }
+}

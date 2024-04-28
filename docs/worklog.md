@@ -162,6 +162,43 @@ rails g graphql:object <model_name>
 
 ### Testing
 
-For testing GraphQL, I used this reference:
+For testing GraphQL, I used these references:
 
 https://jamesnewton.com/blog/how-i-test-graphql-in-rails-with-rspec
+https://selleo.com/blog/testing-graphql-mutations-in-ruby-on-rails-with-rspec
+
+I leaned towards the 2nd approach as it simulates actual request on the graphql endpoint.
+
+Sample query in `spec/graphql/fixtures/**/*.gql` can also be used in GraphiQL
+
+### Asking help from ChatGPT
+
+Since I am running out of time, I asked ChatGPT for help in defining the the other fields for all models.
+
+I asked to replicate my code for Menu for the other models.o
+
+For the list queries
+```{ruby}
+field :menus, [Types::MenuType], null: false, description: 'Returns a the list of available menus'
+
+def menus
+  Menu.all
+end
+```
+
+For the item queries (only for those with identifier field)
+```{ruby}
+field :menu, Types::MenuType, null: true, description: 'Returns menu with corresponding identifier' do
+  argument :identifier, String, required: true
+end
+
+def menu(identifier:)
+  Menu.find_by(identifier: identifier)
+end
+```
+
+**Note:** Adding the test case for the requests and response for each of the models is ideal but very tedious.
+
+However, I think I have demonstrated enough how this is done in `spec/graphql/types/query_type_spec.rb`
+
+If I have enough time, I will generate the specs for the other models.

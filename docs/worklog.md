@@ -202,3 +202,53 @@ end
 However, I think I have demonstrated enough how this is done in `spec/graphql/types/query_type_spec.rb`
 
 If I have enough time, I will generate the specs for the other models.
+
+### Implementing the mutations
+
+I have implemented the full CRUD for Menu.
+
+As much as I want to go further, implementing the full CRUD for all models is not possible with the tme I have left.
+
+However, the mutations I created are well-tested so I am confident that they are working well.
+
+## Deployment
+
+I originally wanted to implement a full CI/CD but seeing that I've run out of time, I'll just do a quick deploy with Heroku.
+
+I did the deployment via git push using Heroku CLI.
+
+The app is available at: https://resto-menu-api-3c61fad65343.herokuapp.com/graphiql
+
+## Takeaways
+
+I had pretty ambitious expectations going into this app. Some of them, I did not accomplish and some I improved beyond the specifications.
+
+Overall, I enjoyed making this app!
+
+### Successes
+
+- Implementation of the models according to the provided ERD
+- Validations, including custom ones
+- Well-tested models
+- Integrating GraphQL with RoR from scratch for the first time
+- GraphQL queries for all models, including tests
+    - The test did not cover all models as I ran out of time. However, I was able to write enough to demonstrate my learning an approach on this
+
+### Misses
+
+- Build CI/CD (nice to have)
+- Setup devcontainers (nice to have)
+- Mutations for all models
+    - I was only able to implement the full CRUD for Menu
+    - I wanted to implement swapping of display_order as well as I had some ideas around it
+- I had to backtrack to model generation while seeding because I misunderstood the relation between Modifier and Item
+
+### What I could have done differently
+
+- Perhaps I should have negotiated to implement the identifier with the Rails default id (int type) as I spent too much time making it work with the customer primary and foreign keys.
+    - However, I am proud that I did not give up even when I was frustrated along the way
+
+- Do not spent to much time on generating the Menu seed. :sweat: I wanted to imagine a Menu I wanted to experience but I dove too deep into the rabbit hole.
+
+- Use ChatGPT earlier to help in generating repeated code
+    - I had a lot of duplicated work from typing. It would have been faster if I had used ChatGPT earlier easpecially for repeatable code. I formulated the logic myself anyway.

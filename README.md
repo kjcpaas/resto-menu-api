@@ -1,24 +1,69 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a GraphQL API for Restaurant Menu.
 
-Things you may want to cover:
+Worklogs is in [docs/worklog.md]
 
-* Ruby version
+Access the GraphiQL interface via: https://resto-menu-api-3c61fad65343.herokuapp.com/graphiql
 
-* System dependencies
+You can check [spec/fixtures/graphql] for some sample queries
 
-* Configuration
 
-* Database creation
+## Pre-requisites
 
-* Database initialization
+### Ruby version
+```
+cat .ruby-version
+> 3.3.1
+```
 
-* How to run the test suite
+Run the following if you do not have this version:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+brew upgrade ruby-build
+rbenv install 3.3.1
+```
 
-* Deployment instructions
+### Database
 
-* ...
+Running locally requires `sqlite`
+
+## Setup
+
+### Installing gems
+
+```
+bundle install
+```
+
+### DB setup
+```
+bundle exec rails db:setup db:migrate db:seed
+```
+
+## Running the server
+
+```
+bundle exec rails server
+```
+
+Application is available at `localhost:3000`
+
+### Endpoints
+
+- `POST /graphql`: the main graphql endpoint
+- `GET /graphiql`: provides an interface to craete a request
+
+**NOTE**: Ideally, the `/graphiql` endpoint is not accessible in prod. However, since we are just using dummy data, this endpoint is exposed for easier testing.
+
+## Testing
+
+This application uses RSpec for testing.
+
+In addition, factory helpers like `factory_bot` and `faker` were used to generate dummy data for test.
+
+Run the tests via:
+
+```
+bundle exec rspec
+```

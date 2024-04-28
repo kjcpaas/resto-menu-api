@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   post '/graphql', to: 'graphql#execute'
 
   root to: proc { [200, {}, ['GraphQL API via POST /graphql, GraphiQL interface via GET /graphiql']] }

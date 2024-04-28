@@ -1,0 +1,137 @@
+{
+  "data": {
+    "menus": [
+      {
+        "label": "Sakura Blossoms Delights",
+        "state": "active",
+        "endDate": "2024-04-30",
+        "startDate": "2024-03-15",
+        "menuSections": [
+          {
+            "displayOrder": 0,
+            "section": {
+              "label": "Chef's Table",
+              "description": "Savor an exquisite culinary journey crafted by Chef Hiroshi, our Michelin-starred maestro, at the exclusive Chef's Table.",
+              "sectionItems": [
+                {
+                  "displayOrder": 0,
+                  "item": {
+                    "type": "Product",
+                    "label": "Sakura Symphony Omakase",
+                    "description": "Discover the art of Omakase with our Sakura Symphony, curated by Chef Hiroshi, where you entrust the chef to craft a bespoke dining experience, guiding you through the essence of cherry blossoms with each exquisite dish.",
+                    "price": 150,
+                    "itemModifierGroups": []
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "displayOrder": 1,
+            "section": {
+              "label": "Drinks",
+              "description": "Elevate your dining experience with carefully curated beverages to complement your Omakase journey.",
+              "sectionItems": [
+                {
+                  "displayOrder": 0,
+                  "item": {
+                    "type": "Product",
+                    "label": "Sakura Blossom Tea",
+                    "description": "Fragrant green tea infused with cherry blossoms, served hot or cold.",
+                    "price": 8,
+                    "itemModifierGroups": [
+                      {
+                        "modifierGroup": {
+                          "label": "How would you like your tea?",
+                          "selectionRequiredMin": 1,
+                          "selectionRequiredMax": 99,
+                          "modifiers": [
+                            {
+                              "displayOrder": 0,
+                              "defaultQuantity": 1,
+                              "priceOverride": null,
+                              "item": {
+                                "type": "Component",
+                                "label": "Oyu (Hot)",
+                                "description": "Indulge in the comforting warmth of fragrant green tea infused with delicate cherry blossoms, offering a soothing accompaniment to your meal.",
+                                "price": 8
+                              }
+                            },
+                            {
+                              "displayOrder": 1,
+                              "defaultQuantity": 0,
+                              "priceOverride": null,
+                              "item": {
+                                "type": "Component",
+                                "label": "Hiya (Cold)",
+                                "description": "Refresh your palate with the crisp and invigorating flavors of chilled green tea infused with delicate cherry blossoms, perfect for enjoying on a warm day.",
+                                "price": 8
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "displayOrder": 1,
+                  "item": {
+                    "type": "Product",
+                    "label": "Sakura Sake",
+                    "description": "Premium sake infused with cherry blossom petals.",
+                    "price": 12,
+                    "itemModifierGroups": [
+                      {
+                        "modifierGroup": {
+                          "label": "How much sake do you want?",
+                          "selectionRequiredMin": 1,
+                          "selectionRequiredMax": 10,
+                          "modifiers": [
+                            {
+                              "displayOrder": 0,
+                              "defaultQuantity": 1,
+                              "priceOverride": null,
+                              "item": {
+                                "type": "Component",
+                                "label": "Tokkuri (Small Flask)",
+                                "description": "A single-serving flask of premium sake infused with the essence of cherry blossoms, perfect for savoring the flavors of the season.",
+                                "price": 12
+                              }
+                            },
+                            {
+                              "displayOrder": 1,
+                              "defaultQuantity": 0,
+                              "priceOverride": null,
+                              "item": {
+                                "type": "Component",
+                                "label": "Chokkari (Medium Flask)",
+                                "description": "A medium-sized flask of premium sake, ideal for sharing and enhancing the culinary journey with friends or loved ones.",
+                                "price": 18
+                              }
+                            },
+                            {
+                              "displayOrder": 2,
+                              "defaultQuantity": 0,
+                              "priceOverride": null,
+                              "item": {
+                                "type": "Component",
+                                "label": "Otokka (Large Flask)",
+                                "description": "A generous flask of premium sake, symbolizing celebration and joy, to elevate your dining experience to new heights.",
+                                "price": 25
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

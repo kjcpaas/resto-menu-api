@@ -151,3 +151,17 @@ We also need to install `factory_bot` and `faker` gem to help with the attribute
 I decided to forgo the CI/CD pipeline build at this point and priotitize building the GraphQL api.
 
 I used https://www.apollographql.com/blog/using-graphql-with-ruby-on-rails as the main reference.
+
+After adding the `graphql` and other related gems to the Gemfile,
+
+GraphQL types were generated from their corresponding Rails model via:
+
+```
+rails g graphql:object <model_name>
+```
+
+### Testing
+
+For testing GraphQL, I used this reference:
+
+https://jamesnewton.com/blog/how-i-test-graphql-in-rails-with-rspec

@@ -3,12 +3,14 @@ AllCops:
     - config/unicorn.rb
     - db/**
     - bin/bundle
+    - app/controllers/graphql_controller.rb
   Rails:
     Enabled: true
 Style/Documentation:
   Exclude:
     - db/migrate/*
     - config/application.rb
+    - app/graphql/**/*
 Metrics/MethodLength:
   Exclude:
     - db/migrate/*

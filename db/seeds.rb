@@ -136,12 +136,14 @@ Modifier.create!({
   modifier_group: sake_size,
   display_order: 0,
   default_quantity: 1
-},{
+})
+Modifier.create!({
   item: medium_sake,
   modifier_group: sake_size,
   display_order: 1,
   default_quantity: 0
-},{
+})
+Modifier.create!({
   item: large_sake,
   modifier_group: sake_size,
   display_order: 2,

@@ -4,8 +4,8 @@
 class Item < ApplicationRecord
   include StringIdentifiable
 
-  has_many :item_modifier_group, dependent: :destroy
-  has_many :section_item, dependent: :destroy
+  has_many :item_modifier_groups, dependent: :destroy
+  has_many :section_items, dependent: :destroy
 
   validates :type, presence: true, inclusion: { in: %w[Product Component] }
 

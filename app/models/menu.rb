@@ -5,7 +5,7 @@ class Menu < ApplicationRecord
   include StringIdentifiable
 
   # Associations
-  has_many :menu_sections, dependent: :destroy
+  has_many :menu_sections, -> { order(:display_order) }, dependent: :destroy
 
   # Assumption is this is the menu title so this must not be blank
   validates :label, presence: true

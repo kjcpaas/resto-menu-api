@@ -34,7 +34,9 @@ gem 'bootsnap', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 # gem "rack-cors"
 
+gem 'graphiql-rails', '~> 1.10'
 gem 'graphql', '~>2.3'
+gem 'propshaft', '~> 0.8.0', group: :development
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -48,6 +50,4 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem "graphiql-rails", "~> 1.10"
-  gem "propshaft", "~> 0.8.0", :group => :development
 end

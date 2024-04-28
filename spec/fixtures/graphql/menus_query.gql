@@ -1,0 +1,42 @@
+{
+  menus {
+    label
+    state
+    endDate
+    startDate
+    menuSections {
+      displayOrder
+      section {
+        label
+        description
+        sectionItems {
+          displayOrder
+          item {
+            type
+            label
+            description
+            price
+            itemModifierGroups {
+              modifierGroup {
+                label
+                selectionRequiredMin
+                selectionRequiredMax
+                modifiers {
+                  displayOrder
+                  defaultQuantity
+                  priceOverride
+                  item {
+                    type
+                    label
+                    description
+                    price
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

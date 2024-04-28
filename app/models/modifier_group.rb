@@ -5,7 +5,7 @@ class ModifierGroup < ApplicationRecord
   include StringIdentifiable
 
   # Associations
-  has_many :modifiers, dependent: :destroy
+  has_many :modifiers, -> { order(:display_order) }, dependent: :destroy
   has_many :item_modifier_groups, dependent: :destroy
 
   # Assumption is this is the name of the modifier group so it cannot be blank

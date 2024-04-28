@@ -16,6 +16,18 @@ RSpec.describe ModifierGroup, type: :model do
     end
   end
 
+  describe 'modifiers' do
+    let!(:modifier_group) { create :modifier_group }
+    let!(:item1) { create :modifier, modifier_group:, display_order: 1 }
+    let!(:item2) { create :modifier, modifier_group:, display_order: 0 }
+
+    it 'orders according to display_order' do
+      expect(modifier_group.modifiers.count).to eq 2
+      expect(modifier_group.modifiers[0].display_order).to eq 0
+      expect(modifier_group.modifiers[1].display_order).to eq 1
+    end
+  end
+
   describe 'validations' do
     it 'does not allow negative selection' do
       mg_neg_min = build(:modifier_group, selection_required_min: -1)

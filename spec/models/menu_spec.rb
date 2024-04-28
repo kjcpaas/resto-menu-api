@@ -16,6 +16,18 @@ RSpec.describe Menu, type: :model do
     end
   end
 
+  describe 'menu sections' do
+    let!(:menu) { create :menu }
+    let!(:section1) { create :menu_section, menu:, display_order: 1 }
+    let!(:section2) { create :menu_section, menu:, display_order: 0 }
+
+    it 'orders according to display_order' do
+      expect(menu.menu_sections.count).to eq 2
+      expect(menu.menu_sections[0].display_order).to eq 0
+      expect(menu.menu_sections[1].display_order).to eq 1
+    end
+  end
+
   describe 'validations' do
     it 'is valid when expected attributes are passed' do
       menu = FactoryBot.build(:menu)

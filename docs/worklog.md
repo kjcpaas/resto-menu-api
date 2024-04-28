@@ -143,3 +143,11 @@ Now that is working, I'll write tests first before proceeding further to make su
 We need to first add the `rspec` gem, and write tests related to each model.
 
 We also need to install `factory_bot` and `faker` gem to help with the attributes for testing.
+
+## Adding GraphQL
+
+*At this point, I realized that I consumed more than half of the 8 hours alloted*.
+
+I decided to forgo the CI/CD pipeline build at this point and priotitize building the GraphQL api.
+
+I used https://www.apollographql.com/blog/using-graphql-with-ruby-on-rails as the main reference.

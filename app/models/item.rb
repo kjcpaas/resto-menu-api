@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   has_many :item_modifier_group, dependent: :destroy
   has_many :section_item, dependent: :destroy
 
-  validates :type, presence: true, inclusion: { in: %w(Product Component) }
+  validates :type, presence: true, inclusion: { in: %w[Product Component] }
 
   # Assumption is this is the menu title so this must not be blank
   validates :label, presence: true

@@ -9,3 +9,6 @@ Style/Documentation:
   Exclude:
     - db/migrate/*
     - config/application.rb
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*

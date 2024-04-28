@@ -24,6 +24,8 @@ class Menu < ApplicationRecord
   private
 
   def end_date_not_before_start_date
+    return unless end_date.present?
+    return unless start_date.present?
     return unless end_date < start_date
 
     errors.add(:end_date, "can't be before start_date")

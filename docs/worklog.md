@@ -127,3 +127,19 @@ Please indicate your preferred options for the Sakura-cha and Sakura Nihonshu up
 
 Enjoy your Sakura Blossom Delights experience!
 ```
+
+I added the corresponding data to `db/seeds.rb`
+
+## Writing unit tests for model
+
+We have successfully generated seed data for our models but we still do not have tests.
+
+Ideally I wanted to write the tests first before generating the model.
+
+However, I knew that the non-standard primary keys would be tricky to implement so I focused on making that work first.
+
+Now that is working, I'll write tests first before proceeding further to make sure I don't break anything moving forward.
+
+We need to first add the `rspec` gem, and write tests related to each model.
+
+We also need to install `factory_bot` and `faker` gem to help with the attributes for testing.

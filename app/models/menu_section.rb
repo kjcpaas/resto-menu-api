@@ -10,7 +10,8 @@ class MenuSection < ApplicationRecord
   belongs_to :section
 
   validates :menu_id, presence: true
-  validates :section_id, presence: true
+  # Do not duplicate section within a menu
+  validates :section_id, presence: true, uniqueness: { scope: :menu_id }
 
   validate_display_order_for :menu_id
 end

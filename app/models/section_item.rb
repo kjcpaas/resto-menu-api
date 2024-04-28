@@ -10,7 +10,8 @@ class SectionItem < ApplicationRecord
   belongs_to :item
 
   validates :section_id, presence: true
-  validates :item_id, presence: true
+  # Do not duplicate item within a section
+  validates :item_id, presence: true, uniqueness: { scope: :section_id }
 
   validate_display_order_for :section_id
 end

@@ -100,6 +100,8 @@ GEM
       i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    graphiql-rails (1.10.0)
+      railties
     graphql (2.3.2)
       base64
     i18n (1.14.4)
@@ -149,6 +151,11 @@ GEM
     parser (3.3.1.0)
       ast (~> 2.4.1)
       racc
+    propshaft (0.8.0)
+      actionpack (>= 7.0.0)
+      activesupport (>= 7.0.0)
+      rack
+      railties (>= 7.0.0)
     psych (5.1.2)
       stringio
     racc (1.7.3)
@@ -228,6 +235,13 @@ GEM
     rubocop-ast (1.31.2)
       parser (>= 3.3.0.4)
     ruby-progressbar (1.13.0)
+    sprockets (4.2.1)
+      concurrent-ruby (~> 1.0)
+      rack (>= 2.2.4, < 4)
+    sprockets-rails (3.4.2)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      sprockets (>= 3.0.0)
     sqlite3 (1.7.3-aarch64-linux)
     sqlite3 (1.7.3-arm-linux)
     sqlite3 (1.7.3-arm64-darwin)
@@ -259,10 +273,13 @@ DEPENDENCIES
   debug
   factory_bot_rails
   faker (~> 3.3.1)
+  graphiql-rails (~> 1.10)
   graphql (~> 2.3)
+  propshaft (~> 0.8.0)
   rails (~> 7.1.3, >= 7.1.3.2)
   rspec-rails (~> 6.1.0)
   rubocop
+  sprockets-rails (~> 3.4)
   sqlite3 (~> 1.4)
   tzinfo-data
 

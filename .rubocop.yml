@@ -5,3 +5,7 @@ AllCops:
     - bin/bundle
   Rails:
     Enabled: true
+Style/Documentation:
+  Exclude:
+    - db/migrate/*
+    - config/application.rb

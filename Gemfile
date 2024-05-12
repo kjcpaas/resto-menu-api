@@ -29,7 +29,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-# gem "rack-cors"
+gem "rack-cors"
 
 gem 'graphiql-rails', '~> 1.10'
 gem 'graphql', '~>2.3'
@@ -48,6 +48,9 @@ group :development, :test do
   gem 'rubocop', require: false
 
   gem 'sqlite3', '~> 1.4'
+
+  # Use .env file
+  gem 'dotenv'
 end
 
 group :development do
